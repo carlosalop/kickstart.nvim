@@ -972,6 +972,22 @@ require('lazy').setup({
       -- ... and there is more!
       --  Check out: https://github.com/echasnovski/mini.nvim
       require('mini.pairs').setup()
+      require('mini.starter').setup {
+        evaluate_single = true,
+        footer = os.date(),
+        header = table.concat({
+          [[  /\ \▔\___  ___/\   /(●)_ __ ___  ]],
+          [[ /  \/ / _ \/ _ \ \ / / | '_ ` _ \ ]],
+          [[/ /\  /  __/ (_) \ V /| | | | | | |]],
+          [[\_\ \/ \___|\___/ \_/ |_|_| |_| |_|]],
+          [[───────────────────────────────────]],
+        }, '\n'),
+        items = {
+          { action = 'enew', name = 'E: New Buffer', section = 'Builtin actions' },
+          { action = 'Telescope find_files', name = 'S: Telescope Search files', section = 'Builtin actions' },
+          { action = 'qall!', name = 'Q: Quit Neovim', section = 'Builtin actions' },
+        },
+      }
     end,
   },
   { -- Highlight, edit, and navigate code
