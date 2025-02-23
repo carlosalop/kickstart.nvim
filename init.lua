@@ -985,7 +985,9 @@ require('lazy').setup({
         items = {
           { action = 'enew', name = 'E: New Buffer', section = 'Builtin actions' },
           { action = 'qall!', name = 'Q: Quit Neovim', section = 'Builtin actions' },
-          { action = 'Telescope find_files', name = 'S: Telescope Search files', section = 'Telescope' },
+          { action = 'Telescope find_files', name = 'S: Telescope Search Files', section = 'Telescope' },
+          { action = 'Telescope oldfiles', name = 'R: Telescope Recent Files', section = 'Telescope' },
+          { action = 'Telescope help_tags', name = 'H: Telescope Help', section = 'Telescope' },
           { action = 'Lazy update', name = 'L: Lazy update', section = 'Lazy' },
         },
       }
@@ -1029,7 +1031,7 @@ require('lazy').setup({
       -- OPTIONAL:
       --   `nvim-notify` is only needed, if you want to use the notification view.
       --   If not available, we use `mini` as the fallback
-      'rcarriga/nvim-notify',
+      -- 'rcarriga/nvim-notify',
     },
   },
   -- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
