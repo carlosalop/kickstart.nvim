@@ -984,8 +984,9 @@ require('lazy').setup({
         }, '\n'),
         items = {
           { action = 'enew', name = 'E: New Buffer', section = 'Builtin actions' },
-          { action = 'Telescope find_files', name = 'S: Telescope Search files', section = 'Builtin actions' },
           { action = 'qall!', name = 'Q: Quit Neovim', section = 'Builtin actions' },
+          { action = 'Telescope find_files', name = 'S: Telescope Search files', section = 'Telescope' },
+          { action = 'Lazy update', name = 'L: Lazy update', section = 'Lazy' },
         },
       }
     end,
