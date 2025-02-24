@@ -92,6 +92,8 @@ vim.g.maplocalleader = ' '
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
+-- CALT
+vim.opt.termguicolors = true
 
 -- [[ Setting options ]]
 -- See `:help vim.opt`
@@ -159,8 +161,10 @@ vim.opt.scrolloff = 15
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
---CALT use jj to got back to normal mode on insert
+-- CALT use jj to got back to normal mode on insert
 vim.api.nvim_set_keymap('i', 'jj', '<Esc>', { noremap = false })
+-- CALT save keymap
+vim.keymap.set('n', '<C-s>', ':w<CR>', { noremap = true, silent = true })
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
@@ -912,7 +916,7 @@ require('lazy').setup({
       -- vim.cmd.colorscheme 'tokyonight-night'
     end,
   },
-  -- CALT: catppuccin theme
+  -- CALT: More themes.
   {
     'catppuccin/nvim',
     name = 'catppuccin',
@@ -921,7 +925,22 @@ require('lazy').setup({
       require('catppuccin').setup {
         transparent_background = true,
       }
-      vim.cmd.colorscheme 'catppuccin'
+      -- vim.cmd.colorscheme 'catppuccin'
+    end,
+  },
+  {
+    'sainnhe/gruvbox-material',
+    lazy = false,
+    priority = 1000,
+    config = function()
+      -- Optionally configure and load the colorscheme
+      -- directly inside the plugin declaration.
+      vim.g.gruvbox_material_enable_italic = false
+      vim.g.gruvbox_material_foreground = 'material'
+      vim.g.gruvbox_material_transparent_background = 1
+      vim.g.gruvbox_material_diagnostic_text_highligh = 1
+      vim.g.gruvbox_material_diagnostic_line_highlight = 1
+      vim.cmd.colorscheme 'gruvbox-material'
     end,
   },
   -- CALT: Cursor movement animation
