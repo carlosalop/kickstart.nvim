@@ -164,7 +164,7 @@ vim.opt.scrolloff = 15
 -- CALT use jj to got back to normal mode on insert
 vim.api.nvim_set_keymap('i', 'jj', '<Esc>', { noremap = false })
 -- CALT save keymap
-vim.keymap.set('n', '<C-s>', ':w<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<C-s>', ':w<CR>', { noremap = true, silent = true, desc = 'Save Buffer' })
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
@@ -925,7 +925,7 @@ require('lazy').setup({
       require('catppuccin').setup {
         transparent_background = true,
       }
-      -- vim.cmd.colorscheme 'catppuccin'
+      vim.cmd.colorscheme 'catppuccin'
     end,
   },
   {
@@ -940,7 +940,7 @@ require('lazy').setup({
       vim.g.gruvbox_material_transparent_background = 1
       vim.g.gruvbox_material_diagnostic_text_highligh = 1
       vim.g.gruvbox_material_diagnostic_line_highlight = 1
-      vim.cmd.colorscheme 'gruvbox-material'
+      -- vim.cmd.colorscheme 'gruvbox-material'
     end,
   },
   -- CALT: Cursor movement animation
@@ -992,7 +992,7 @@ require('lazy').setup({
       --  Check out: https://github.com/echasnovski/mini.nvim
       require('mini.pairs').setup()
       require('mini.trailspace').setup()
-      require('mini.tabline').setup()
+      -- require('mini.tabline').setup()
       require('mini.bracketed').setup()
       require('mini.starter').setup {
         evaluate_single = true,
