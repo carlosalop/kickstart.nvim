@@ -163,6 +163,7 @@ vim.opt.scrolloff = 15
 
 -- CALT use jj to got back to normal mode on insert
 vim.api.nvim_set_keymap('i', 'jj', '<Esc>', { noremap = false })
+vim.api.nvim_set_keymap('i', 'jk', '<Esc>', { noremap = false })
 -- CALT save keymap
 vim.keymap.set('n', '<C-s>', ':w<CR>', { noremap = true, silent = true, desc = 'Save Buffer' })
 -- Clear highlights on search when pressing <Esc> in normal mode
@@ -922,9 +923,9 @@ require('lazy').setup({
     name = 'catppuccin',
     priority = 1000,
     config = function()
-      require('catppuccin').setup {
-        transparent_background = true,
-      }
+      -- require('catppuccin').setup {
+      --   transparent_background = true,
+      -- }
       vim.cmd.colorscheme 'catppuccin'
     end,
   },
@@ -937,7 +938,7 @@ require('lazy').setup({
       -- directly inside the plugin declaration.
       vim.g.gruvbox_material_enable_italic = false
       vim.g.gruvbox_material_foreground = 'material'
-      vim.g.gruvbox_material_transparent_background = 1
+      -- vim.g.gruvbox_material_transparent_background = 1
       vim.g.gruvbox_material_diagnostic_text_highligh = 1
       vim.g.gruvbox_material_diagnostic_line_highlight = 1
       -- vim.cmd.colorscheme 'gruvbox-material'
@@ -1073,7 +1074,15 @@ require('lazy').setup({
     -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
     ---@module 'render-markdown'
     ---@type render.md.UserConfig
-    opts = {},
+    opts = {
+      heading = {
+        position = 'inline',
+        width = 'block',
+        left_pad = 1,
+        right_pad = 2,
+        min_width = 30,
+      },
+    },
   },
   -- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
   -- init.lua. If you want these files, they are in the repository, so you can just download them and
