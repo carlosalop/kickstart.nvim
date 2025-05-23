@@ -1082,6 +1082,9 @@ require('lazy').setup({
         right_pad = 2,
         min_width = 30,
       },
+      checkbox = {
+        checked = { scope_highlight = '@markup.strikethrough' },
+      },
     },
   },
   -- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
